@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -94,7 +95,12 @@
 
   /* News item styling */
   .news-item {
-    @apply mb-8 pb-6 border-b border-gray-100 last:border-b-0;
+    @apply mb-8 pb-6 border-b border-gray-100 last:border-b-0 relative pl-4;
+  }
+
+  .news-item::before {
+    content: '';
+    @apply absolute left-0 top-0 h-full w-1 bg-rspamd-accent/30;
   }
 
   .news-date {
@@ -102,7 +108,32 @@
   }
 
   .testimonial-card {
-    @apply p-8 rounded-2xl bg-white shadow-md border-l-4 border-rspamd-accent;
+    @apply p-8 rounded-2xl bg-white shadow-md border-l-4 border-rspamd-accent relative;
+  }
+  
+  /* Cyberpunk additional elements */
+  .cyberpunk-card {
+    @apply hover:shadow-md transition-all duration-300 rounded-sm px-4 relative;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(249,115,22,0.05) 100%);
+  }
+  
+  .cyberpunk-feature {
+    @apply before:absolute before:top-0 before:left-0 before:w-0 before:h-1 before:bg-rspamd-accent 
+           hover:before:w-full before:transition-all before:duration-300;
+  }
+  
+  .feature-icon-container {
+    @apply relative flex items-center justify-center w-12 h-12 rounded-md;
+    background: linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(249,115,22,0.05) 100%);
+  }
+  
+  .feature-icon {
+    filter: drop-shadow(0 0 2px rgba(249, 115, 22, 0.3));
+  }
+  
+  .cyberpunk-download-card {
+    @apply after:absolute after:bottom-0 after:right-0 after:h-[2px] after:w-0 after:bg-rspamd-accent 
+           hover:after:w-full after:transition-all after:duration-300;
   }
 }
 
@@ -135,6 +166,34 @@
   }
 }
 
+/* Futuristic animations */
+@keyframes circuit-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes hex-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes data-flow {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 @layer utilities {
   .animate-float {
     animation: float 5s ease-in-out infinite;
@@ -142,5 +201,17 @@
   
   .animate-glow {
     animation: glow 3s ease-in-out infinite;
+  }
+  
+  .animate-circuit-pulse {
+    animation: circuit-pulse 3s ease-in-out infinite;
+  }
+  
+  .animate-hex-rotate {
+    animation: hex-rotate 10s linear infinite;
+  }
+  
+  .animate-data-flow {
+    animation: data-flow 3s linear infinite;
   }
 }
