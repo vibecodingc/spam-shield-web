@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, ArrowDown, Zap, Search, Download, FileCode, Link, Code, Shield, Globe, MailCheck } from "lucide-react";
@@ -6,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedCircuit from "@/components/AnimatedCircuit";
 import DataFlowAnimation from "@/components/DataFlowAnimation";
+import EmailFilterAnimation from "@/components/EmailFilterAnimation";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Index = () => {
@@ -16,30 +16,35 @@ const Index = () => {
       {/* Hero Section */}
       <section className="gradient-bg py-20 md:py-32 relative overflow-hidden">
         <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
-            <div className="inline-block px-4 py-1 mb-6 rounded-full border border-rspamd-accent/30 bg-white/10 backdrop-blur-sm">
-              <span className="text-sm font-medium text-rspamd-dark flex items-center gap-2">
-                <span className="inline-block w-2 h-2 rounded-full bg-rspamd-accent animate-pulse"></span>
-                Next-gen Spam Protection
-              </span>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="max-w-3xl">
+              <div className="inline-block px-4 py-1 mb-6 rounded-full border border-rspamd-accent/30 bg-white/10 backdrop-blur-sm">
+                <span className="text-sm font-medium text-rspamd-dark flex items-center gap-2">
+                  <span className="inline-block w-2 h-2 rounded-full bg-rspamd-accent animate-pulse"></span>
+                  Next-gen Spam Protection
+                </span>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-rspamd-dark mb-6 leading-tight">
+                Fast, free and <span className="text-rspamd-accent cyber-text">open-source</span> spam filtering system
+              </h1>
+              <p className="text-lg md:text-xl text-rspamd-dark/80 mb-10 max-w-2xl">
+                Advanced spam filtering with high performance and flexibility.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button className="btn-primary flex items-center gap-2 relative overflow-hidden group cyber-border">
+                  <span className="relative z-10">Get Started</span>
+                  <ArrowRight size={16} className="relative z-10 group-hover:translate-x-1 transition-transform" />
+                  <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                </Button>
+                <Button variant="outline" className="btn-secondary flex items-center gap-2 relative overflow-hidden group">
+                  <span className="relative z-10">Documentation</span>
+                  <ArrowDown size={16} className="relative z-10 group-hover:translate-y-1 transition-transform" />
+                  <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                </Button>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-rspamd-dark mb-6 leading-tight">
-              Fast, free and <span className="text-rspamd-accent cyber-text">open-source</span> spam filtering system
-            </h1>
-            <p className="text-lg md:text-xl text-rspamd-dark/80 mb-10 max-w-2xl">
-              Advanced spam filtering with high performance and flexibility.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button className="btn-primary flex items-center gap-2 relative overflow-hidden group cyber-border">
-                <span className="relative z-10">Get Started</span>
-                <ArrowRight size={16} className="relative z-10 group-hover:translate-x-1 transition-transform" />
-                <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-              </Button>
-              <Button variant="outline" className="btn-secondary flex items-center gap-2 relative overflow-hidden group">
-                <span className="relative z-10">Documentation</span>
-                <ArrowDown size={16} className="relative z-10 group-hover:translate-y-1 transition-transform" />
-                <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-              </Button>
+            <div className="flex justify-center">
+              <EmailFilterAnimation />
             </div>
           </div>
         </div>
