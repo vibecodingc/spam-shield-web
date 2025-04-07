@@ -1,11 +1,12 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, ArrowDown, Zap, Layers, Shield, Code, Terminal, Database, Cpu } from "lucide-react";
+import { ArrowRight, Github, ArrowDown, Zap, Search, Download, FileCode, Link, Code } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnimatedCircuit from "@/components/AnimatedCircuit";
 import DataFlowAnimation from "@/components/DataFlowAnimation";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Index = () => {
   return (
@@ -23,10 +24,10 @@ const Index = () => {
               </span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-rspamd-dark mb-6 leading-tight">
-              Advanced spam <span className="text-rspamd-accent">filtering</span> system
+              Fast, free and <span className="text-rspamd-accent">open-source</span> spam filtering system
             </h1>
             <p className="text-lg md:text-xl text-rspamd-dark/80 mb-10 max-w-2xl">
-              Fast, free and open-source spam filtering system with high performance and flexibility.
+              Advanced spam filtering with high performance and flexibility.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button className="btn-primary flex items-center gap-2 relative overflow-hidden group">
@@ -35,7 +36,7 @@ const Index = () => {
                 <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
               </Button>
               <Button variant="outline" className="btn-secondary flex items-center gap-2 relative overflow-hidden group">
-                <span className="relative z-10">Read Docs</span>
+                <span className="relative z-10">Documentation</span>
                 <ArrowDown size={16} className="relative z-10 group-hover:translate-y-1 transition-transform" />
                 <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
               </Button>
@@ -46,71 +47,127 @@ const Index = () => {
         <DataFlowAnimation />
       </section>
 
-      {/* Overview Section */}
-      <section className="py-16 bg-white" id="overview">
+      {/* News Section */}
+      <section className="py-16 bg-white" id="news">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold mb-6 text-center">Overview</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center">Latest News</h2>
           <div className="max-w-3xl mx-auto">
-            <p className="text-center text-lg leading-relaxed mb-8">
-              Rspamd is an advanced spam filtering system that allows evaluation of messages by using rules, 
-              statistical analysis, and custom services such as URL black lists. Each message is analyzed by Rspamd 
-              and given a spam score, allowing for flexible and fine-grained control over mail filtering.
-            </p>
+            <div className="news-item">
+              <h3 className="text-xl font-semibold mb-2">Rspamd 3.11.1 has been released</h3>
+              <p className="news-date">2025-03-10</p>
+              <p className="text-gray-700">New stable release is now available.</p>
+            </div>
+            <div className="news-item">
+              <h3 className="text-xl font-semibold mb-2">Study: Rspamd and GPT integration</h3>
+              <p className="news-date">2024-07-03</p>
+              <p className="text-gray-700">We have studied the efficiency of the new GPT plugin to access LLM (large language models) intelligence.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features Grid Section */}
       <section className="py-16 bg-rspamd-gray" id="features">
         <div className="container-custom">
-          <h2 className="text-3xl font-bold mb-12 text-center">Key Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div className="feature-card relative group hover:border-rspamd-accent/30 hover:border transition-all">
               <div className="text-rspamd-accent mb-4 group-hover:scale-110 transition-transform">
                 <Zap size={32} strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Fast</h3>
+              <h3 className="text-xl font-semibold mb-2">Performance</h3>
               <p className="text-gray-600">
-                Written in C/Lua for high performance, processing hundreds of messages per second.
+                Rspamd is designed to be fast and can process up to 100 emails per second using a single CPU core.
               </p>
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-rspamd-accent/20 rounded-2xl transition-all pointer-events-none"></div>
             </div>
-            <div className="feature-card relative group hover:border-rspamd-accent/30 hover:border transition-all">
-              <div className="text-rspamd-accent mb-4 group-hover:scale-110 transition-transform">
-                <Layers size={32} strokeWidth={1.5} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Scalable</h3>
-              <p className="text-gray-600">
-                Designed for high-load systems with built-in load balancing and proxying.
-              </p>
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-rspamd-accent/20 rounded-2xl transition-all pointer-events-none"></div>
-            </div>
-            <div className="feature-card relative group hover:border-rspamd-accent/30 hover:border transition-all">
-              <div className="text-rspamd-accent mb-4 group-hover:scale-110 transition-transform">
-                <Shield size={32} strokeWidth={1.5} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Secure</h3>
-              <p className="text-gray-600">
-                Advanced techniques for detection of spam, phishing, and malware in emails.
-              </p>
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-rspamd-accent/20 rounded-2xl transition-all pointer-events-none"></div>
-            </div>
+            
             <div className="feature-card relative group hover:border-rspamd-accent/30 hover:border transition-all">
               <div className="text-rspamd-accent mb-4 group-hover:scale-110 transition-transform">
                 <Code size={32} strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Flexible</h3>
+              <h3 className="text-xl font-semibold mb-2">Features</h3>
               <p className="text-gray-600">
-                Fully configurable and extensible with Lua for writing custom plugins and rules.
+                Learn about the wide range of technologies supported by Rspamd to filter spam.
               </p>
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-rspamd-accent/20 rounded-2xl transition-all pointer-events-none"></div>
+            </div>
+            
+            <div className="feature-card relative group hover:border-rspamd-accent/30 hover:border transition-all">
+              <div className="text-rspamd-accent mb-4 group-hover:scale-110 transition-transform">
+                <Search size={32} strokeWidth={1.5} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Compare</h3>
+              <p className="text-gray-600">
+                Compare Rspamd with other spam filtering systems.
+              </p>
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-rspamd-accent/20 rounded-2xl transition-all pointer-events-none"></div>
+            </div>
+            
+            <div className="feature-card relative group hover:border-rspamd-accent/30 hover:border transition-all">
+              <div className="text-rspamd-accent mb-4 group-hover:scale-110 transition-transform">
+                <FileCode size={32} strokeWidth={1.5} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Documentation</h3>
+              <p className="text-gray-600">
+                Study how to install, configure and extend Rspamd using the documentation provided.
+              </p>
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-rspamd-accent/20 rounded-2xl transition-all pointer-events-none"></div>
+            </div>
+            
+            <div className="feature-card relative group hover:border-rspamd-accent/30 hover:border transition-all">
+              <div className="text-rspamd-accent mb-4 group-hover:scale-110 transition-transform">
+                <Link size={32} strokeWidth={1.5} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Media</h3>
+              <p className="text-gray-600">
+                Watch videos and presentations about Rspamd.
+              </p>
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-rspamd-accent/20 rounded-2xl transition-all pointer-events-none"></div>
+            </div>
+            
+            <div className="feature-card relative group hover:border-rspamd-accent/30 hover:border transition-all">
+              <div className="text-rspamd-accent mb-4 group-hover:scale-110 transition-transform">
+                <Github size={32} strokeWidth={1.5} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Donation & Support</h3>
+              <p className="text-gray-600">
+                Check this page if you need help or want to make a donation or contribute to Rspamd.
+              </p>
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-rspamd-accent/20 rounded-2xl transition-all pointer-events-none"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <section className="py-16 bg-white" id="testimonials">
+        <div className="container-custom">
+          <h2 className="text-3xl font-bold mb-10 text-center">What People Say</h2>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="testimonial-card">
+              <p className="text-lg italic mb-6">
+                "Locaweb is the largest email provider in Brazil, Locaweb supports more than 10 million inbound email addresses and processes more than 200 million email messages a day.
+              </p>
+              <p className="text-lg italic mb-6">
+                Beyond the Rspamd's performance can be only compared with some extremely expensive brands available on the market, it has a bunch of powerful features and algorithms that constitute an amazing tool against Spam and other email abuses.
+              </p>
+              <p className="text-lg italic mb-6">
+                Rspamd is broadly customizable and allows multiple strategies to avoid Spam and false positives. In conclusion, Rspamd team is not only giving an incredible support for Locaweb but it has also been a great partner."
+              </p>
+              <div className="flex items-center">
+                <div>
+                  <p className="font-semibold">Rafael Abdo</p>
+                  <p className="text-sm text-gray-600">Computer Security Incident Coordinator</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Download Section */}
-      <section className="py-16 bg-white" id="downloads">
+      <section className="py-16 bg-rspamd-gray" id="downloads">
         <div className="container-custom">
           <h2 className="text-3xl font-bold mb-12 text-center">Downloads</h2>
           <div className="max-w-2xl mx-auto text-center">
@@ -139,7 +196,7 @@ const Index = () => {
                   <h3 className="text-xl font-semibold mb-2">Packages</h3>
                   <p className="text-gray-600 mb-3">Pre-built packages for major platforms</p>
                   <div className="flex justify-center">
-                    <ArrowDown size={24} className="text-rspamd-dark group-hover:text-rspamd-accent transition-colors" />
+                    <Download size={24} className="text-rspamd-dark group-hover:text-rspamd-accent transition-colors" />
                   </div>
                 </div>
                 <div className="absolute inset-0 bg-rspamd-accent/5 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>

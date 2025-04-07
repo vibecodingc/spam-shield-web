@@ -34,24 +34,24 @@ const DataFlowAnimation = () => {
       viewBox="0 0 200 400"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <line x1="40" y1="20" x2="40" y2="380" stroke="currentColor" strokeWidth="1" className="text-rspamd-accent" />
-      <line x1="100" y1="20" x2="100" y2="380" stroke="currentColor" strokeWidth="1" className="text-rspamd-accent" />
-      <line x1="160" y1="20" x2="160" y2="380" stroke="currentColor" strokeWidth="1" className="text-rspamd-accent" />
+      <line x1="40" y1="20" x2="40" y2="380" stroke="#F97316" strokeWidth="1" className="opacity-30" />
+      <line x1="100" y1="20" x2="100" y2="380" stroke="#F97316" strokeWidth="1" className="opacity-30" />
+      <line x1="160" y1="20" x2="160" y2="380" stroke="#F97316" strokeWidth="1" className="opacity-30" />
       
-      <circle className="particle" cx="40" cy="40" r="3" fill="currentColor" />
-      <circle className="particle" cx="40" cy="80" r="3" fill="currentColor" />
-      <circle className="particle" cx="40" cy="120" r="3" fill="currentColor" />
-      <circle className="particle" cx="40" cy="160" r="3" fill="currentColor" />
+      <circle className="particle" cx="40" cy="40" r="3" fill="#F97316" />
+      <circle className="particle" cx="40" cy="80" r="3" fill="#F97316" />
+      <circle className="particle" cx="40" cy="120" r="3" fill="#F97316" />
+      <circle className="particle" cx="40" cy="160" r="3" fill="#F97316" />
       
-      <circle className="particle" cx="100" cy="60" r="3" fill="currentColor" />
-      <circle className="particle" cx="100" cy="100" r="3" fill="currentColor" />
-      <circle className="particle" cx="100" cy="140" r="3" fill="currentColor" />
-      <circle className="particle" cx="100" cy="180" r="3" fill="currentColor" />
+      <circle className="particle" cx="100" cy="60" r="3" fill="#F97316" />
+      <circle className="particle" cx="100" cy="100" r="3" fill="#F97316" />
+      <circle className="particle" cx="100" cy="140" r="3" fill="#F97316" />
+      <circle className="particle" cx="100" cy="180" r="3" fill="#F97316" />
       
-      <circle className="particle" cx="160" cy="40" r="3" fill="currentColor" />
-      <circle className="particle" cx="160" cy="80" r="3" fill="currentColor" />
-      <circle className="particle" cx="160" cy="120" r="3" fill="currentColor" />
-      <circle className="particle" cx="160" cy="160" r="3" fill="currentColor" />
+      <circle className="particle" cx="160" cy="40" r="3" fill="#F97316" />
+      <circle className="particle" cx="160" cy="80" r="3" fill="#F97316" />
+      <circle className="particle" cx="160" cy="120" r="3" fill="#F97316" />
+      <circle className="particle" cx="160" cy="160" r="3" fill="#F97316" />
     </svg>
   );
 };
